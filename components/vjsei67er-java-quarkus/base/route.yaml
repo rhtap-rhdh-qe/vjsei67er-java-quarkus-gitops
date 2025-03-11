@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: vjsei67er-java-quarkus
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: vjsei67er-java-quarkus 
+  name: vjsei67er-java-quarkus
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: vjsei67er-java-quarkus
+    weight: 100 
